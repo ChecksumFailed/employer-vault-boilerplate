@@ -2,6 +2,7 @@
 type: company
 status: active
 created: "2026-08-23"
+name: Example Company
 summary: Placeholder organization used only by the demonstration notes.
 ---
 

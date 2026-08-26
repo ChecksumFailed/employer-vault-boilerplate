@@ -7,6 +7,35 @@ summary: Weekly vault review
 
 # Weekly review — {{date}}
 
+## Weekly synthesis
+
+### Accomplishments and progress
+
+-
+
+### Decisions and important changes
+
+-
+
+### Research findings
+
+-
+
+### Issues, enhancements, and risks
+
+-
+
+### Next week's priorities
+
+- [ ]
+
+### Sources reviewed
+
+- Meetings:
+- Research:
+- Work items:
+- Decisions:
+
 ## Inbox
 
 - [ ] Process notes in `00 Inbox`
@@ -25,6 +54,13 @@ summary: Weekly vault review
 - [ ] Update current state where it changed
 - [ ] Review next steps, risks, and open questions
 - [ ] Promote important decisions into decision notes
+
+## Research and work items
+
+- [ ] Update the current answer and open questions in active research notes
+- [ ] Review open issues, enhancements, risks, and questions
+- [ ] Confirm every important work item has a status and owner
+- [ ] Close resolved work items and record how they were verified
 
 ## Knowledge
 

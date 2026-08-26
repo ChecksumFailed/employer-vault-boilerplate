@@ -7,7 +7,7 @@ summary: Setup and operating guide for the employer work-vault boilerplate
 
 # Employer work-vault boilerplate
 
-This vault is a minimal system for preserving project context, meetings, decisions, people, companies, and durable knowledge. It is designed for employer-approved storage and for processing handwritten Rocketbook notes into useful digital records.
+This vault is a minimal system for preserving project context, meetings, research, work items, decisions, people, companies, and durable knowledge. It is designed for employer-approved storage and for turning raw work material, including handwritten Rocketbook notes, into useful digital records.
 
 ## Organizing model
 
@@ -21,22 +21,35 @@ This vault is a minimal system for preserving project context, meetings, decisio
 The folder model is deliberately shallow:
 
 - `00 Inbox/` receives unprocessed notes.
-- `Notes/` holds permanent project, meeting, decision, and knowledge notes.
+- `Meetings/` holds dated meeting records.
+- `Projects/` holds project hubs.
+- `Notes/` holds research, work items, decisions, knowledge, and general project notes.
 - `People/` holds person notes named `!Name.md` with no spaces.
 - `Companies/` holds company notes named `@Name.md` with no spaces.
 - `Attachments/` holds general attachments; `Attachments/Rocketbook/` holds scans.
-- `Templates/` holds native Obsidian templates.
+- `Templates/` holds QuickAdd templates; templates without QuickAdd prompts also work with Obsidian's Templates core plugin.
 - `Examples/` holds a removable demonstration project.
+
+The durable note types have distinct jobs:
+
+- A `meeting` records a time-bound interaction.
+- `research` preserves an active investigation, evidence, sources, and uncertainty.
+- A `work-item` is an issue, enhancement, risk, or question that needs independent ownership, status, investigation, or history.
+- A `decision` explains a consequential choice and its rationale.
+- `knowledge` is a stable, reusable conclusion rather than raw research history.
+- A general `note` holds useful project context that does not fit another durable type.
+
+Person notes store a company link, role, work email, work phone, last-contact date, and a concise professional summary. Keep them factual and limited to employer-approved, professionally useful information.
 
 ## Project hubs and child notes
 
-A project hub is the project's landing page and lightweight README. Its current state, desired outcome, next steps, risks, open questions, key people, and immediately important decisions are manually curated. Meeting history, the complete decision list, open actions, and all related notes are generated dynamically by Dataview.
+A project hub is the project's landing page and lightweight README. Its current state, desired outcome, next steps, risks, open questions, key people, and immediately important decisions are manually curated. Meetings, active research, open work items, the complete decision list, open actions, and all related notes are generated dynamically by Dataview.
 
 Every child note links to its hub through the YAML `projects` list. That relationship lets the hub discover child notes wherever they are stored, so the hub does not need to manually list every meeting or decision. The Markdown remains readable if Dataview is removed, while backlinks still expose many relationships.
 
 ## Create a new project
 
-1. Create a note in `Notes/` from [[Templates/Project Hub|Project Hub]].
+1. Run **New Work Note → Project**, or create a note in `Projects/` from [[Templates/Project Hub|Project Hub]].
 2. Give it a durable, recognizable project name and complete its current state and desired outcome.
 3. In each related note, add the project as a quoted link in the `projects` list, for example:
 
@@ -45,12 +58,18 @@ Every child note links to its hub through the YAML `projects` list. That relatio
      - "[[Project Name]]"
    ```
 
-4. Add only the most important decisions to the hub's curated section; Dataview will assemble the complete history.
+4. Add only the most important decisions to the hub's curated section; Dataview will assemble the complete history, research, work items, meetings, and actions.
+
+## Research and work items
+
+Use [[Templates/Research|Research]] for an active investigation. Record the question, current understanding, findings, evidence, sources, open questions, and project implications. When a conclusion becomes stable and reusable outside the investigation, promote it into [[Templates/Knowledge|Knowledge]].
+
+Use [[Templates/Work Item|Work Item]] when an issue, enhancement, risk, or question needs its own owner, status, investigation, discussion, or history. Keep small tasks directly in the project hub or another child note. Every research and work-item note should link its project through the `projects` property.
 
 ## Process a Rocketbook meeting
 
 1. Put the scan in `Attachments/Rocketbook/`.
-2. Create a note from [[Templates/Meeting|Meeting]], normally in `Notes/`.
+2. Run **New Work Note → Meeting** to create a dated note in `Meetings/`.
 3. Write the summary, then extract decisions, assigned actions, open questions, and essential context.
 4. Populate `projects` and `people` with YAML lists of links. Person filenames use `!Name` without spaces.
 5. Embed the scan under **Original handwritten notes**.
@@ -62,13 +81,17 @@ See [[Note Taking System]] for the full workflow.
 
 Create a note from [[Templates/Weekly Review|Weekly Review]]. Process the inbox and scans, check meeting summaries and ownership, review each active project hub, and promote consequential decisions or reusable knowledge into standalone notes.
 
-## Obsidian and Dataview setup
+## Obsidian, Dataview, and QuickAdd setup
 
-The included Obsidian settings send new notes to `00 Inbox`, attachments to `Attachments`, and native template insertion to `Templates`. Templates, Properties, and Backlinks are enabled as core plugins.
+The included Obsidian settings send unstructured new notes to `00 Inbox`, attachments to `Attachments`, and native template insertion to `Templates`. File Explorer, Search, Command Palette, Bookmarks, Templates, Properties, and Backlinks are enabled as core plugins.
 
-Dataview 0.5.68 is included and enabled in this boilerplate, with DataviewJS and inline JavaScript queries disabled. After opening the vault, go to **Settings → Community plugins** and confirm **Dataview** is enabled. If Obsidian asks first, turn off Restricted mode for this employer-approved vault.
+The vault declares Dataview and QuickAdd as enabled community plugins, but their executable plugin files are not stored in Git. After opening the vault, install both from **Settings → Community plugins → Browse** if they are absent, then enable them. If Obsidian asks first, turn off Restricted mode only for an employer-approved vault.
 
-If Dataview is ever absent, install it through **Settings → Community plugins → Browse**, search for **Dataview**, select it, choose **Install**, and then **Enable**. Do not install it from an untrusted source.
+The tracked Dataview configuration disables DataviewJS and inline JavaScript queries. The tracked QuickAdd configuration disables QuickAdd online features and URI callbacks, and provides a **New Work Note** command with choices for Meeting, Project, Research, Work Item, Decision, Knowledge, Note, Person, Company, and Weekly Review. Each choice applies the corresponding template, naming convention, and destination folder.
+
+After QuickAdd is installed, open the Command Palette and run **QuickAdd: New Work Note**. Optionally assign it a hotkey under **Settings → Hotkeys**. Plain `Ctrl+N` remains the fast path for an unprocessed note in `00 Inbox/`.
+
+Do not install community plugins from an untrusted source. Community plugins can access vault contents; confirm their use is allowed by employer policy.
 
 ## Remove the examples
 

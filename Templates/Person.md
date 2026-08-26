@@ -1,15 +1,19 @@
 ---
 type: person
+status: active
 created: "{{date}}"
-organization:
+name: "{{VALUE:name}}"
+company:
 role:
+email:
+phone:
 last-contact:
 summary:
 ---
 
-# {{title}}
+# {{VALUE:name}}
 
-<!-- Keep person notes factual, respectful, and professionally useful rather than creating a personal dossier. Name person files !Name with no spaces and store them in People/. -->
+<!-- Keep person notes factual, respectful, and professionally useful rather than creating a personal dossier. Record work contact details only. Name person files !Name with no spaces and store them in People/. -->
 
 ## Context
 

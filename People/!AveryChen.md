@@ -1,8 +1,12 @@
 ---
 type: person
+status: active
 created: "2026-08-23"
-organization: "[[@ExampleCompany]]"
+name: Avery Chen
+company: "[[@ExampleCompany]]"
 role: Platform operations lead
+email: avery.chen@example.invalid
+phone: "+1 202-555-0101"
 last-contact: "2026-08-23"
 summary: Fictional project lead for the CMDB health example.
 ---

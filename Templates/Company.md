@@ -2,10 +2,11 @@
 type: company
 status: active
 created: "{{date}}"
+name: "{{VALUE:name}}"
 summary:
 ---
 
-# {{title}}
+# {{VALUE:name}}
 
 <!-- Name company files @Name with no spaces and store them in Companies/. Keep the note factual and limited to professionally useful context. -->
 

@@ -2,7 +2,7 @@
 type: home
 status: active
 created: "2026-08-23"
-summary: Home page for projects, meetings, decisions, and notes needing attention
+summary: Home page for projects, research, work items, meetings, decisions, and notes needing attention
 ---
 
 # Start Here
@@ -14,6 +14,26 @@ TABLE status AS "Status", area AS "Area", owner AS "Owner", review-date AS "Next
 WHERE type = "project"
   AND status = "active"
 SORT file.name ASC
+```
+
+## Open work items
+
+```dataview
+TABLE kind AS "Kind", projects AS "Projects", priority AS "Priority", owner AS "Owner", status AS "Status", summary AS "Summary"
+WHERE type = "work-item"
+  AND status != "resolved"
+  AND status != "closed"
+SORT priority ASC, file.name ASC
+```
+
+## Active research
+
+```dataview
+TABLE projects AS "Projects", question AS "Question", status AS "Status", summary AS "Current Answer"
+WHERE type = "research"
+  AND status != "complete"
+  AND status != "closed"
+SORT file.mtime DESC
 ```
 
 ## Recent meetings
@@ -46,5 +66,5 @@ SORT file.ctime ASC
 
 - [[Note Taking System|Note-taking workflow]]
 - [[Templates/Weekly Review|Weekly review template]]
-- Templates: [[Templates/Project Hub|Project Hub]], [[Templates/Meeting|Meeting]], [[Templates/Decision|Decision]], [[Templates/Person|Person]], [[Templates/Company|Company]], [[Templates/Knowledge|Knowledge]], [[Templates/Weekly Review|Weekly Review]]
+- Templates: [[Templates/Project Hub|Project Hub]], [[Templates/Meeting|Meeting]], [[Templates/Research|Research]], [[Templates/Work Item|Work Item]], [[Templates/Decision|Decision]], [[Templates/Knowledge|Knowledge]], [[Templates/Note|Note]], [[Templates/Person|Person]], [[Templates/Company|Company]], [[Templates/Weekly Review|Weekly Review]]
 - [[Examples/CMDB Health Improvement|Example project]]

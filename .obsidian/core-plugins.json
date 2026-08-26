@@ -1,4 +1,8 @@
 [
+  "file-explorer",
+  "global-search",
+  "command-palette",
+  "bookmarks",
   "backlink",
   "properties",
   "templates"

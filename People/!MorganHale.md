@@ -1,8 +1,12 @@
 ---
 type: person
+status: active
 created: "2026-08-23"
-organization: "[[@ExampleCompany]]"
+name: Morgan Hale
+company: "[[@ExampleCompany]]"
 role: Integration engineer
+email: morgan.hale@example.invalid
+phone: "+1 202-555-0102"
 last-contact: "2026-08-23"
 summary: Fictional integration engineer for the CMDB health example.
 ---
