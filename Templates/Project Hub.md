@@ -1,14 +1,28 @@
+<%*
+const created = tp.date.now("YYYY-MM-DD");
+let projectTitle = tp.file.title;
+
+if (projectTitle === "Untitled") {
+  projectTitle = await tp.system.prompt("Project name");
+}
+
+if (!projectTitle) {
+  throw new Error("A project name is required.");
+}
+
+await tp.file.move(`/Projects/${projectTitle}`);
+-%>
 ---
 type: project
 status: active
-created: "{{date}}"
+created: "<% created %>"
 area:
 owner:
 review-date:
 summary:
 ---
 
-# {{title}}
+# <% projectTitle %>
 
 <!-- Current state, risks, next steps, and important decisions are manually curated. Meetings, research, work items, and the complete decision list are dynamic. Keep this hub a concise dashboard, not a dumping ground. -->
 

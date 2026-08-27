@@ -1,9 +1,34 @@
+<%*
+const created = tp.date.now("YYYY-MM-DD");
+let workItemTitle = tp.file.title;
+
+if (workItemTitle === "Untitled") {
+  workItemTitle = await tp.system.prompt("Work item title");
+}
+
+if (!workItemTitle) {
+  throw new Error("A work item title is required.");
+}
+
+const workItemKind = await tp.system.suggester(
+  ["Issue", "Enhancement", "Risk", "Question"],
+  ["issue", "enhancement", "risk", "question"],
+  false,
+  "Work item kind"
+);
+
+if (!workItemKind) {
+  throw new Error("A work item kind is required.");
+}
+
+await tp.file.move(`/Notes/${workItemTitle}`);
+-%>
 ---
 type: work-item
-kind: "{{VALUE:issue,enhancement,risk,question|name:kind}}"
+kind: "<% workItemKind %>"
 status: open
-created: "{{date}}"
-updated: "{{date}}"
+created: "<% created %>"
+updated: "<% created %>"
 priority:
 owner:
 projects: []
@@ -11,7 +36,7 @@ people: []
 summary:
 ---
 
-# {{title}}
+# <% workItemTitle %>
 
 <!-- Use kind: issue, enhancement, risk, or question. Create a standalone work item when it needs its own owner, status, investigation, or history. -->
 

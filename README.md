@@ -27,7 +27,7 @@ The folder model is deliberately shallow:
 - `People/` holds person notes named `!Name.md` with no spaces.
 - `Companies/` holds company notes named `@Name.md` with no spaces.
 - `Attachments/` holds general attachments; `Attachments/Rocketbook/` holds scans.
-- `Templates/` holds QuickAdd templates; templates without QuickAdd prompts also work with Obsidian's Templates core plugin.
+- `Templates/` holds Templater templates that apply properties, naming conventions, and destination folders.
 - `Examples/` holds a removable demonstration project.
 
 The durable note types have distinct jobs:
@@ -49,7 +49,7 @@ Every child note links to its hub through the YAML `projects` list. That relatio
 
 ## Create a new project
 
-1. Run **New Work Note → Project**, or create a note in `Projects/` from [[Templates/Project Hub|Project Hub]].
+1. Run **Templater: Create new note from template**, choose [[Templates/Project Hub|Project Hub]], and enter the project name.
 2. Give it a durable, recognizable project name and complete its current state and desired outcome.
 3. In each related note, add the project as a quoted link in the `projects` list, for example:
 
@@ -69,7 +69,7 @@ Use [[Templates/Work Item|Work Item]] when an issue, enhancement, risk, or quest
 ## Process a Rocketbook meeting
 
 1. Put the scan in `Attachments/Rocketbook/`.
-2. Run **New Work Note → Meeting** to create a dated note in `Meetings/`.
+2. Run **Templater: Create new note from template** and choose **Meeting** to create a dated note in `Meetings/`.
 3. Write the summary, then extract decisions, assigned actions, open questions, and essential context.
 4. Populate `projects` and `people` with YAML lists of links. Person filenames use `!Name` without spaces.
 5. Embed the scan under **Original handwritten notes**.
@@ -79,17 +79,19 @@ See [[Note Taking System]] for the full workflow.
 
 ## Weekly review
 
-Create a note from [[Templates/Weekly Review|Weekly Review]]. Process the inbox and scans, check meeting summaries and ownership, review each active project hub, and promote consequential decisions or reusable knowledge into standalone notes.
+Run **Templater: Create new note from template** and choose [[Templates/Weekly Review|Weekly Review]]. Process the inbox and scans, check meeting summaries and ownership, review each active project hub, and promote consequential decisions or reusable knowledge into standalone notes.
 
-## Obsidian, Dataview, and QuickAdd setup
+## Obsidian, Dataview, and Templater setup
 
-The included Obsidian settings send unstructured new notes to `00 Inbox`, attachments to `Attachments`, and native template insertion to `Templates`. File Explorer, Search, Command Palette, Bookmarks, Templates, Properties, and Backlinks are enabled as core plugins.
+The included Obsidian settings send unstructured new notes to `00 Inbox` and attachments to `Attachments`. File Explorer, Search, Command Palette, Bookmarks, Properties, and Backlinks are enabled as core plugins.
 
-The vault declares Dataview and QuickAdd as enabled community plugins, but their executable plugin files are not stored in Git. After opening the vault, install both from **Settings → Community plugins → Browse** if they are absent, then enable them. If Obsidian asks first, turn off Restricted mode only for an employer-approved vault.
+The vault declares Dataview and Templater as enabled community plugins, but their executable plugin files are not stored in Git. After opening the vault, install both from **Settings → Community plugins → Browse** if they are absent, then enable them. If Obsidian asks first, turn off Restricted mode only for an employer-approved vault.
 
-The tracked Dataview configuration disables DataviewJS and inline JavaScript queries. The tracked QuickAdd configuration disables QuickAdd online features and URI callbacks, and provides a **New Work Note** command with choices for Meeting, Project, Research, Work Item, Decision, Knowledge, Note, Person, Company, and Weekly Review. Each choice applies the corresponding template, naming convention, and destination folder.
+The tracked Dataview configuration disables DataviewJS and inline JavaScript queries. The tracked Templater configuration uses `Templates/` and includes filename rules for missing person and company links. Templater intentionally stores its **Trigger Templater on new file creation** switch on each device rather than in the vault, so enable that switch once under **Settings → Templater → File creation** on every device. Leave **Template matching mode** set to **File regex templates**.
 
-After QuickAdd is installed, open the Command Palette and run **QuickAdd: New Work Note**. Optionally assign it a hotkey under **Settings → Hotkeys**. Plain `Ctrl+N` remains the fast path for an unprocessed note in `00 Inbox/`.
+To create a known note type, run **Templater: Create new note from template**, choose the template, and enter its title. The template applies the naming convention and moves the note to its durable folder. Optionally assign that command a hotkey under **Settings → Hotkeys**. Plain `Ctrl+N` remains the fast path for an unprocessed note in `00 Inbox/`.
+
+Missing people and companies can be created directly from links. Write a person link such as `[[!MorganHale|Morgan Hale]]` or a company link such as `[[@ExampleCompany|Example Company]]`. When you follow an unresolved link, Obsidian creates it in `00 Inbox/`; Templater recognizes the prefix, fills the appropriate template, and moves the note to `People/` or `Companies/`. Person and company display names are inferred from PascalCase, underscores, or hyphens in the link target. Link each person to their company using the `company` property; the company note then lists those people automatically with Dataview.
 
 Do not install community plugins from an untrusted source. Community plugins can access vault contents; confirm their use is allowed by employer policy.
 

@@ -16,10 +16,14 @@ Example Company is a fictional placeholder organization created solely for this 
 
 - Demonstrates how an employer or other organization can be linked without mixing company notes into people or project folders.
 
-## Key people
+## People
 
-- [[!AveryChen]]
-- [[!MorganHale]]
+```dataview
+TABLE WITHOUT ID file.link AS "Person", role AS "Role", last-contact AS "Last Contact", summary AS "Summary"
+WHERE type = "person"
+  AND company = this.file.link
+SORT file.name ASC
+```
 
 ## Current work
 

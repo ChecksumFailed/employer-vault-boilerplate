@@ -1,11 +1,15 @@
+<%*
+const created = tp.date.now("YYYY-MM-DD");
+await tp.file.move(`/Notes/${created} - Weekly Review`);
+-%>
 ---
 type: review
 status: open
-created: "{{date}}"
+created: "<% created %>"
 summary: Weekly vault review
 ---
 
-# Weekly review — {{date}}
+# Weekly review — <% created %>
 
 ## Weekly synthesis
 

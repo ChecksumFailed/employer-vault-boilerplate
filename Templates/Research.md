@@ -1,15 +1,29 @@
+<%*
+const created = tp.date.now("YYYY-MM-DD");
+let researchTitle = tp.file.title;
+
+if (researchTitle === "Untitled") {
+  researchTitle = await tp.system.prompt("Research title");
+}
+
+if (!researchTitle) {
+  throw new Error("A research title is required.");
+}
+
+await tp.file.move(`/Notes/${researchTitle}`);
+-%>
 ---
 type: research
 status: active
-created: "{{date}}"
-updated: "{{date}}"
+created: "<% created %>"
+updated: "<% created %>"
 projects: []
 people: []
 question:
 summary:
 ---
 
-# {{title}}
+# <% researchTitle %>
 
 <!-- A research note preserves an active investigation. Promote stable, reusable conclusions into a Knowledge note. -->
 

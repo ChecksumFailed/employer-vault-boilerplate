@@ -1,14 +1,31 @@
+<%*
+const created = tp.date.now("YYYY-MM-DD");
+const datePrefix = `${created} - `;
+let meetingTitle = tp.file.title.startsWith(datePrefix)
+  ? tp.file.title.slice(datePrefix.length)
+  : tp.file.title;
+
+if (meetingTitle === "Untitled") {
+  meetingTitle = await tp.system.prompt("Meeting title");
+}
+
+if (!meetingTitle) {
+  throw new Error("A meeting title is required.");
+}
+
+await tp.file.move(`/Meetings/${datePrefix}${meetingTitle}`);
+-%>
 ---
 type: meeting
 status: processed
-created: "{{date}}"
-date: "{{date}}"
+created: "<% created %>"
+date: "<% created %>"
 projects: []
 people: []
 summary:
 ---
 
-# {{title}}
+# <% meetingTitle %>
 
 <!-- The Rocketbook scan is source material, not the finished digital note. Process it into the sections below. -->
 

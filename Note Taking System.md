@@ -13,7 +13,9 @@ This is a practical work-note workflow. Folders provide broad storage, propertie
 
 Use `Ctrl+N` for fast, unstructured capture. The note lands in `00 Inbox/`. During processing, rename it, apply the appropriate properties and structure, link its project and people, and move it to its durable folder.
 
-Use **QuickAdd: New Work Note** when you already know the note type. QuickAdd creates the note from the correct template in the correct folder. The inbox is a temporary queue, not permanent storage.
+Use **Templater: Create new note from template** when you already know the note type. Choose the template and enter a title; Templater applies the naming convention and moves the note to the correct folder. The inbox is a temporary queue, not permanent storage.
+
+You can create a missing person or company while writing another note. Use links such as `[[!MorganHale|Morgan Hale]]` and `[[@ExampleCompany|Example Company]]`. Following an unresolved `!` link applies the Person template and moves the new note to `People/`; following an unresolved `@` link applies the Company template and moves it to `Companies/`. This requires **Trigger Templater on new file creation** to be enabled on the current device.
 
 Choose the durable type by what the record represents:
 
