@@ -1,0 +1,46 @@
+{
+  "data_version": 2,
+  "command_timeout": 5,
+  "templates_folder": "Templates",
+  "templates_pairs": [],
+  "trigger_on_file_creation_mode": "regex",
+  "auto_jump_to_cursor": true,
+  "jump_to_cursor_after_file_name": true,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "folder_templates": [],
+  "file_templates": [
+    {
+      "regex": "^00 Inbox/![^/]+\\.md$",
+      "template": "Templates/Person.md"
+    },
+    {
+      "regex": "^00 Inbox/@[^/]+\\.md$",
+      "template": "Templates/Company.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    "Templates/Meeting.md",
+    "Templates/Project Hub.md",
+    "Templates/Research.md",
+    "Templates/Work Item.md",
+    "Templates/Decision.md",
+    "Templates/Knowledge.md",
+    "Templates/Note.md",
+    "Templates/Person.md",
+    "Templates/Company.md",
+    "Templates/Weekly Review.md"
+  ],
+  "startup_templates": [],
+  "intellisense_render": 1,
+  "ignore_folders_on_creation": [
+    {
+      "folder": "Templates"
+    },
+    {
+      "folder": "Attachments"
+    }
+  ]
+}

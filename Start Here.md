@@ -7,6 +7,28 @@ summary: Home page for projects, research, work items, meetings, decisions, and 
 
 # Start Here
 
+## Create a note
+
+- **Capture now, classify later:** press `Ctrl+N`. The note is created in `00 Inbox/`.
+- **Known note type:** open the Command Palette with `Ctrl+P`, then run the matching **Templater: Create …** command, such as **Create Meeting**, **Create Research**, or **Create Work Item**.
+- **Choose from every template:** run **Templater: Create new note from template**.
+
+Each typed template asks for any required information, applies the correct properties and naming convention, and moves the note to its durable folder. Assign hotkeys to the per-type **Templater: Create …** commands under **Settings → Hotkeys** if you create some types frequently.
+
+Common choices:
+
+| When you need to… | Create… |
+|---|---|
+| Record a time-bound interaction | Meeting |
+| Establish a project landing page | Project Hub |
+| Investigate a question with evidence and uncertainty | Research |
+| Track an issue, enhancement, risk, or question independently | Work Item |
+| Preserve a consequential choice and its reasoning | Decision |
+| Explain a stable, reusable conclusion | Knowledge |
+| Preserve useful context that fits no more specific type | Note |
+
+See [[Note Taking System]] for the capture, processing, and review workflow.
+
 ## Active projects
 
 ```dataview
@@ -64,7 +86,9 @@ SORT file.ctime ASC
 
 ## Quick links
 
-- [[Note Taking System|Note-taking workflow]]
+- [[README|Vault setup and overview]]
+- [[CONTEXT|Domain glossary]]
+- [[Note Taking System|Capture, processing, and review workflow]]
 - [[Templates/Weekly Review|Weekly review template]]
 - Templates: [[Templates/Project Hub|Project Hub]], [[Templates/Meeting|Meeting]], [[Templates/Research|Research]], [[Templates/Work Item|Work Item]], [[Templates/Decision|Decision]], [[Templates/Knowledge|Knowledge]], [[Templates/Note|Note]], [[Templates/Person|Person]], [[Templates/Company|Company]], [[Templates/Weekly Review|Weekly Review]]
 - [[Examples/CMDB Health Improvement|Example project]]

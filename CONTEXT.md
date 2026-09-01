@@ -7,6 +7,10 @@ summary: Canonical terminology for durable records in this work vault
 
 # Vault domain glossary
 
+## Capture and durable records
+
+A capture is material recorded before its long-term value or shape is known. A durable record is created with an intentional type and enough context to remain useful later. `Ctrl+N` creates a capture in `00 Inbox/`; a Templater **Create** command creates a durable record directly from the appropriate template. The creation route does not change the meaning of a note: an inbox capture becomes durable only after it is classified, completed, linked, and moved to the appropriate folder.
+
 ## Inbox note
 
 An unclassified or unprocessed capture that has not yet earned a durable note type.
@@ -38,3 +42,7 @@ A synthesized, reusable explanation that remains useful outside the investigatio
 ## General note
 
 Useful project context that does not meet the definition of a meeting, research investigation, work item, decision, or knowledge note.
+
+## Supporting records
+
+Person and company notes are reference records rather than project child records. A weekly review is a recurring synthesis and maintenance record. Neither is a substitute for the durable project records above.

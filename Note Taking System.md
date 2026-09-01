@@ -7,13 +7,15 @@ summary: Workflow for turning raw captures, meetings, research, and project conc
 
 # Note Taking System
 
-This is a practical work-note workflow. Folders provide broad storage, properties identify note types, links record relationships, and project hubs show current context. Meetings live in `Meetings/`; project hubs live in `Projects/`; research, work items, decisions, knowledge, and general notes live in `Notes/`. People live in `People/` with filenames such as `!ExamplePerson.md`; companies live in `Companies/` with filenames such as `@ExampleCompany.md`.
+This workflow separates rapid capture from intentional, durable records. Folders provide broad storage, properties identify note types, links record relationships, and project hubs show current context. The canonical type definitions live in [[CONTEXT]].
 
 ## Capture and classify
 
-Use `Ctrl+N` for fast, unstructured capture. The note lands in `00 Inbox/`. During processing, rename it, apply the appropriate properties and structure, link its project and people, and move it to its durable folder.
+If the type is not yet clear, press `Ctrl+N` and write the minimum needed to avoid losing the thought. The note lands in `00 Inbox/` with no requirement to classify it immediately.
 
-Use **Templater: Create new note from template** when you already know the note type. Choose the template and enter a title; Templater applies the naming convention and moves the note to the correct folder. The inbox is a temporary queue, not permanent storage.
+If you already know the type, open the Command Palette with `Ctrl+P` and run the corresponding **Templater: Create …** command. For example, run **Templater: Create Meeting** or **Templater: Create Research**. These commands avoid the extra template-selection step. Use **Templater: Create new note from template** when you prefer to choose from the full template list. Assign hotkeys to frequently used **Create** commands under **Settings → Hotkeys**.
+
+During inbox processing, either develop the capture in place or create the appropriate typed note and move the useful content into it. Before removing the inbox copy, make sure the durable note preserves the source context. A processed note has a meaningful title, the appropriate properties and structure, relevant project and people links, and the correct durable folder.
 
 You can create a missing person or company while writing another note. Use links such as `[[!MorganHale|Morgan Hale]]` and `[[@ExampleCompany|Example Company]]`. Following an unresolved `!` link applies the Person template and moves the new note to `People/`; following an unresolved `@` link applies the Company template and moves it to `Companies/`. This requires **Trigger Templater on new file creation** to be enabled on the current device.
 
@@ -25,6 +27,8 @@ Choose the durable type by what the record represents:
 - Decision: a consequential choice and its reasoning.
 - Knowledge: a stable explanation reusable outside the original project event or investigation.
 - Note: useful project context that does not fit another type.
+
+Meetings live in `Meetings/`; project hubs live in `Projects/`; research, work items, decisions, knowledge, general notes, and weekly reviews live in `Notes/`. People live in `People/` with filenames such as `!ExamplePerson.md`; companies live in `Companies/` with filenames such as `@ExampleCompany.md`.
 
 ## During a meeting
 
@@ -42,7 +46,7 @@ Capture exact names, dates, numbers, and terminology; decisions and who made the
 Preferably immediately after the meeting:
 
 1. Scan the Rocketbook pages.
-2. Create or update the digital meeting note.
+2. Run **Templater: Create Meeting**, or update the existing digital meeting note.
 3. Write a two- or three-sentence summary.
 4. Extract decisions.
 5. Extract actions and owners.
@@ -56,7 +60,7 @@ OCR is a drafting aid, not the finished note. Edit the result until it preserves
 
 ## During research
 
-1. Create a [[Templates/Research|Research]] note and link its project.
+1. Run **Templater: Create Research** and link the note to its project.
 2. State the question before collecting material.
 3. Record the current best answer separately from raw findings.
 4. Capture source links and explain why each source matters.
@@ -72,6 +76,10 @@ Research is evidence and reasoning in progress. Knowledge is the synthesized res
 Use one `work-item` type with a `kind` of `issue`, `enhancement`, `risk`, or `question`. Create a standalone work item only when it needs its own owner, status, investigation, discussion, or history. Keep small tasks as checkboxes in the relevant project, meeting, research, or work-item note.
 
 Resolve a work item by recording the outcome and how it was verified, then set its status to `resolved` or `closed`. Do not delete the record; its history may explain later decisions or behavior.
+
+## Weekly review
+
+Run **Templater: Create Weekly Review** once a week. Process the inbox and remaining scans, confirm meeting summaries and action ownership, review active project hubs, close or update work items, and promote consequential decisions or reusable knowledge into standalone notes. The review is a synthesis and maintenance pass, not a replacement for updating the underlying records.
 
 ## The one-year test
 

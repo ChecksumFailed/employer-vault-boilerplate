@@ -2,8 +2,8 @@
 !.obsidian/plugins/dataview/
 .obsidian/plugins/dataview/*
 !.obsidian/plugins/dataview/data.json
-!.obsidian/plugins/quickadd/
-.obsidian/plugins/quickadd/*
-!.obsidian/plugins/quickadd/data.json
+!.obsidian/plugins/templater-obsidian/
+.obsidian/plugins/templater-obsidian/*
+!.obsidian/plugins/templater-obsidian/data.json
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
