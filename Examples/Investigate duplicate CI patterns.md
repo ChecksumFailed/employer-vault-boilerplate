@@ -3,15 +3,20 @@ type: research
 status: active
 created: "2026-08-23"
 updated: "2026-08-23"
-projects:
-  - "[[CMDB Health Improvement]]"
-people:
-  - "[[!MorganHale]]"
 question: Which sources and identifier patterns account for most duplicate configuration items?
 summary: Initial evidence suggests unstable source identifiers are a likely contributor, but a source-by-source baseline is still needed.
 ---
 
 # Investigate duplicate CI patterns
+
+## Connections
+
+projects:: [[CMDB Health Improvement]]
+people:: [[!MorganHale]]
+
+## Tags
+
+#example #cmdb #research
 
 ## Research question
 
@@ -41,9 +46,7 @@ Unstable or inconsistently populated source identifiers are a plausible cause. T
 
 The findings will determine which identification rules or source mappings need remediation and will provide evidence for [[Stabilize source identifiers]].
 
-## Related
+## Related records
 
-- Projects: [[CMDB Health Improvement]]
-- People: [[!MorganHale]]
 - Work items: [[Stabilize source identifiers]]
 - Decisions: [[Use IRE for inbound CI updates]]

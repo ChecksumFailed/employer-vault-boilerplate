@@ -7,7 +7,11 @@ summary: Workflow for turning raw captures, meetings, research, and project conc
 
 # Note Taking System
 
-This workflow separates rapid capture from intentional, durable records. Folders provide broad storage, properties identify note types, links record relationships, and project hubs show current context. The canonical type definitions live in [[CONTEXT]].
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
+This workflow separates rapid capture from intentional, durable records. Folders provide broad storage, frontmatter properties identify note types, body-level Dataview fields link related pages, tags group topics, and project hubs show current context. The canonical type definitions live in [[CONTEXT]].
 
 ## Capture and classify
 
@@ -15,9 +19,24 @@ If the type is not yet clear, press `Ctrl+N` and write the minimum needed to avo
 
 If you already know the type, open the Command Palette with `Ctrl+P` and run the corresponding **Templater: Create …** command. For example, run **Templater: Create Meeting** or **Templater: Create Research**. These commands avoid the extra template-selection step. Use **Templater: Create new note from template** when you prefer to choose from the full template list. Assign hotkeys to frequently used **Create** commands under **Settings → Hotkeys**.
 
-During inbox processing, either develop the capture in place or create the appropriate typed note and move the useful content into it. Before removing the inbox copy, make sure the durable note preserves the source context. A processed note has a meaningful title, the appropriate properties and structure, relevant project and people links, and the correct durable folder.
+During inbox processing, either develop the capture in place or create the appropriate typed note and move the useful content into it. Before removing the inbox copy, make sure the durable note preserves the source context. A processed note has a meaningful title, the appropriate properties and structure, relevant `projects::` and `people::` links in **Connections**, useful topic tags, and the correct durable folder.
 
 You can create a missing person or company while writing another note. Use links such as `[[!MorganHale|Morgan Hale]]` and `[[@ExampleCompany|Example Company]]`. Following an unresolved `!` link applies the Person template and moves the new note to `People/`; following an unresolved `@` link applies the Company template and moves it to `Companies/`. This requires **Trigger Templater on new file creation** to be enabled on the current device.
+
+Use ordinary wikilinks in the visible fields so Obsidian can search page names while you type:
+
+```markdown
+## Connections
+
+projects:: [[Project One]], [[Project Two]]
+people:: [[!MorganHale|Morgan Hale]]
+
+## Tags
+
+#cmdb #data-quality
+```
+
+Dataview treats comma-separated links as a list, so the automatic project and person views continue to work.
 
 Choose the durable type by what the record represents:
 

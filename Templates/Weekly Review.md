@@ -11,6 +11,10 @@ summary: Weekly vault review
 
 # Weekly review — <% created %>
 
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
 ## Weekly synthesis
 
 ### Accomplishments and progress

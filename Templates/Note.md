@@ -17,14 +17,21 @@ type: note
 status: active
 created: "<% created %>"
 updated: "<% created %>"
-projects: []
-people: []
 summary:
 ---
 
 # <% noteTitle %>
 
 <!-- Use this lightweight template for useful project context that is not a meeting, research investigation, decision, work item, or durable knowledge note. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Summary
 
@@ -33,8 +40,3 @@ summary:
 ## Notes
 
 -
-
-## Related
-
-- Projects:
-- People:

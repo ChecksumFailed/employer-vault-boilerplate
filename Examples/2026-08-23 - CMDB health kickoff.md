@@ -3,15 +3,19 @@ type: meeting
 status: processed
 created: "2026-08-23"
 date: "2026-08-23"
-projects:
-  - "[[CMDB Health Improvement]]"
-people:
-  - "[[!AveryChen]]"
-  - "[[!MorganHale]]"
 summary: The team established a baseline-first approach and selected IRE for inbound CI updates.
 ---
 
 # 2026-08-23 - CMDB health kickoff
+
+## Connections
+
+projects:: [[CMDB Health Improvement]]
+people:: [[!AveryChen]], [[!MorganHale]]
+
+## Tags
+
+#example #cmdb
 
 ## Summary
 
@@ -37,10 +41,8 @@ The first milestone is measurement, not cleanup. Historical sources may use inco
 
 [[!AveryChen]] emphasized that cleanup without preventing recurrence would hide the integration problem. [[!MorganHale]] will compare duplicate rates by source.
 
-## Related
+## Related material
 
-- Projects: [[CMDB Health Improvement]]
-- People: [[!AveryChen]], [[!MorganHale]]
 - Company: [[@ExampleCompany]]
 - Systems or concepts: [[ServiceNow IRE]]
 

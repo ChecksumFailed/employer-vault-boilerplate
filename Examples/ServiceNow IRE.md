@@ -4,13 +4,19 @@ status: active
 created: "2026-08-23"
 updated: "2026-08-23"
 area: Configuration management
-projects:
-  - "[[CMDB Health Improvement]]"
-people: []
 summary: IRE centralizes CI identification and reconciliation for supported inbound updates.
 ---
 
 # ServiceNow IRE
+
+## Connections
+
+projects:: [[CMDB Health Improvement]]
+people::
+
+## Tags
+
+#example #cmdb #servicenow
 
 ## Summary
 

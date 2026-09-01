@@ -17,8 +17,6 @@ type: research
 status: active
 created: "<% created %>"
 updated: "<% created %>"
-projects: []
-people: []
 question:
 summary:
 ---
@@ -26,6 +24,15 @@ summary:
 # <% researchTitle %>
 
 <!-- A research note preserves an active investigation. Promote stable, reusable conclusions into a Knowledge note. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Research question
 
@@ -53,9 +60,7 @@ Summarize the best answer supported by the evidence so far.
 
 What does this mean for the linked project, decisions, or work items?
 
-## Related
+## Related records
 
-- Projects:
-- People:
 - Work items:
 - Decisions:

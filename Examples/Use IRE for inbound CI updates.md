@@ -3,15 +3,19 @@ type: decision
 status: accepted
 created: "2026-08-23"
 date: "2026-08-23"
-projects:
-  - "[[CMDB Health Improvement]]"
-people:
-  - "[[!AveryChen]]"
-  - "[[!MorganHale]]"
 summary: Route inbound CI updates through IRE instead of writing directly to CMDB tables.
 ---
 
 # Use IRE for inbound CI updates
+
+## Connections
+
+projects:: [[CMDB Health Improvement]]
+people:: [[!AveryChen]], [[!MorganHale]]
+
+## Tags
+
+#example #cmdb #decision
 
 ## Context
 

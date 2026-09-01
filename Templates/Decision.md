@@ -20,14 +20,21 @@ type: decision
 status: accepted
 created: "<% created %>"
 date: "<% created %>"
-projects: []
-people: []
 summary:
 ---
 
 # <% decisionTitle %>
 
 <!-- Record enough architectural reasoning to make the decision understandable a year later, not merely the selected option. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Context
 

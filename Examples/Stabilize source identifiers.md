@@ -6,14 +6,19 @@ created: "2026-08-23"
 updated: "2026-08-23"
 priority: high
 owner: "[[!MorganHale]]"
-projects:
-  - "[[CMDB Health Improvement]]"
-people:
-  - "[[!MorganHale]]"
 summary: Determine whether unstable source identifiers are creating duplicate CIs and correct the responsible mappings.
 ---
 
 # Stabilize source identifiers
+
+## Connections
+
+projects:: [[CMDB Health Improvement]]
+people:: [[!MorganHale]]
+
+## Tags
+
+#example #cmdb
 
 ## Description
 
@@ -41,9 +46,7 @@ Every in-scope source provides a stable identifier that is covered by representa
 
 Open.
 
-## Related
+## Related records
 
-- Projects: [[CMDB Health Improvement]]
-- People: [[!MorganHale]]
 - Research: [[Investigate duplicate CI patterns]]
 - Decisions: [[Use IRE for inbound CI updates]]

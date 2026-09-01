@@ -7,6 +7,10 @@ summary: Setup and operating guide for the employer work-vault boilerplate
 
 # Employer work-vault boilerplate
 
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
 This vault is a minimal system for capturing work quickly and preserving project context, meetings, research, work items, decisions, people, companies, and durable knowledge. It is designed for employer-approved storage and for turning raw work material, including handwritten Rocketbook notes, into useful digital records.
 
 Open [[Start Here]] for the daily dashboard and note-creation shortcuts. Read [[Note Taking System]] for the operating workflow and [[CONTEXT]] for the canonical record definitions.
@@ -14,8 +18,9 @@ Open [[Start Here]] for the daily dashboard and note-creation shortcuts. Read [[
 ## Organizing model
 
 - Folders identify broad file storage locations.
-- Properties describe what a note is.
-- Links express relationships.
+- Frontmatter properties describe what a note is and support filtering and sorting.
+- Visible Dataview fields contain page links and express relationships.
+- Body tags group notes by topic.
 - Project hubs provide current context.
 - Dataview assembles history automatically.
 - Backlinks provide an additional automatic relationship view.
@@ -55,17 +60,16 @@ Typed templates request any required information, apply the naming convention an
 
 A project hub is the project's landing page and lightweight README. Its current state, desired outcome, next steps, risks, open questions, key people, and immediately important decisions are manually curated. Meetings, active research, open work items, the complete decision list, open actions, and all related notes are generated dynamically by Dataview.
 
-Every child note links to its hub through the YAML `projects` list. That relationship lets the hub discover child notes wherever they are stored, so the hub does not need to manually list every meeting or decision. The Markdown remains readable if Dataview is removed, while backlinks still expose many relationships.
+Every child note links to its hub through the body-level Dataview field `projects::`. Because its values are ordinary `[[wikilinks]]`, Obsidian searches existing page names as you type. Dataview indexes the field just like a frontmatter property, letting the hub discover child notes wherever they are stored. The hub therefore does not need to manually list every meeting or decision, and backlinks remain useful if Dataview is removed.
 
 ## Create a new project
 
 1. Run **Templater: Create Project Hub** and enter the project name. If the per-template command is unavailable, run **Templater: Create new note from template** and choose [[Templates/Project Hub|Project Hub]].
 2. Give it a durable, recognizable project name and complete its current state and desired outcome.
-3. In each related note, add the project as a quoted link in the `projects` list, for example:
+3. In each related note's **Connections** section, add the project using a normal wikilink. Separate multiple links with commas:
 
-   ```yaml
-   projects:
-     - "[[Project Name]]"
+   ```markdown
+   projects:: [[Project Name]]
    ```
 
 4. Add only the most important decisions to the hub's curated section; Dataview will assemble the complete history, research, work items, meetings, and actions.
@@ -74,14 +78,14 @@ Every child note links to its hub through the YAML `projects` list. That relatio
 
 Use [[Templates/Research|Research]] for an active investigation. Record the question, current understanding, findings, evidence, sources, open questions, and project implications. When a conclusion becomes stable and reusable outside the investigation, promote it into [[Templates/Knowledge|Knowledge]].
 
-Use [[Templates/Work Item|Work Item]] when an issue, enhancement, risk, or question needs its own owner, status, investigation, discussion, or history. Keep small tasks directly in the project hub or another child note. Every research and work-item note should link its project through the `projects` property.
+Use [[Templates/Work Item|Work Item]] when an issue, enhancement, risk, or question needs its own owner, status, investigation, discussion, or history. Keep small tasks directly in the project hub or another child note. Every research and work-item note should link its project through the `projects::` field.
 
 ## Process a Rocketbook meeting
 
 1. Put the scan in `Attachments/Rocketbook/`.
 2. Run **Templater: Create Meeting** to create a dated note in `Meetings/`.
 3. Write the summary, then extract decisions, assigned actions, open questions, and essential context.
-4. Populate `projects` and `people` with YAML lists of links. Person filenames use `!Name` without spaces.
+4. Populate `projects::` and `people::` in **Connections** with wikilinks. Person filenames use `!Name` without spaces.
 5. Embed the scan under **Original handwritten notes**.
 6. Create separate decision or knowledge notes when the content deserves a durable record.
 
@@ -101,7 +105,23 @@ The Dataview configuration disables DataviewJS and inline JavaScript queries. Th
 
 On each device, enable **Trigger Templater on new file creation** under **Settings → Templater → File creation** and leave **Template matching mode** set to **File regex templates**. This is required for unresolved `!Person` and `@Company` links to receive their templates automatically. Per-type **Create** commands work independently of that automatic file-matching feature.
 
-Missing people and companies can be created directly from links. Write a person link such as `[[!MorganHale|Morgan Hale]]` or a company link such as `[[@ExampleCompany|Example Company]]`. When you follow an unresolved link, Obsidian creates it in `00 Inbox/`; Templater recognizes the prefix, fills the appropriate template, and moves the note to `People/` or `Companies/`. Person and company display names are inferred from PascalCase, underscores, or hyphens in the link target. Link each person to their company using the `company` property; the company note then lists those people automatically with Dataview.
+Missing people and companies can be created directly from links. Write a person link such as `[[!MorganHale|Morgan Hale]]` or a company link such as `[[@ExampleCompany|Example Company]]`. When you follow an unresolved link, Obsidian creates it in `00 Inbox/`; Templater recognizes the prefix, fills the appropriate template, and moves the note to `People/` or `Companies/`. Person and company display names are inferred from PascalCase, underscores, or hyphens in the link target. Link each person to their company using `company::` in **Connections**; the company note then lists those people automatically with Dataview. Person notes automatically list every record whose `people::` field links back to them.
+
+## Migrate existing notes
+
+The included script moves `projects`, `people`, `company`, and `tags` out of YAML and into visible body sections. It skips templates, plugin data, and already-migrated notes. Preview a vault first:
+
+```bash
+python3 scripts/migrate_note_metadata.py /path/to/your/vault
+```
+
+Review the reported files, make sure the vault is backed up or committed, and then apply the changes:
+
+```bash
+python3 scripts/migrate_note_metadata.py /path/to/your/vault --write
+```
+
+Files containing both an old YAML relationship and a new body field are skipped for manual review rather than merged automatically.
 
 Do not install community plugins from an untrusted source. Community plugins can access vault contents; confirm their use is allowed by employer policy.
 

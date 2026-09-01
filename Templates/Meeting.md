@@ -20,14 +20,21 @@ type: meeting
 status: processed
 created: "<% created %>"
 date: "<% created %>"
-projects: []
-people: []
 summary:
 ---
 
 # <% meetingTitle %>
 
 <!-- The Rocketbook scan is source material, not the finished digital note. Process it into the sections below. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Summary
 
@@ -53,10 +60,8 @@ Capture reasoning, constraints, exact numbers, terminology, and details that fut
 
 Keep only details that support the summary, decisions, actions, or open questions.
 
-## Related
+## Related material
 
-- Projects:
-- People:
 - Systems or concepts:
 
 ## Original handwritten notes

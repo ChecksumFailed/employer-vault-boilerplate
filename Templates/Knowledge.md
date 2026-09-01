@@ -18,14 +18,21 @@ status: active
 created: "<% created %>"
 updated: "<% created %>"
 area:
-projects: []
-people: []
 summary:
 ---
 
 # <% knowledgeTitle %>
 
 <!-- Durable knowledge notes capture reusable concepts rather than raw meeting history. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Summary
 

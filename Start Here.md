@@ -7,6 +7,10 @@ summary: Home page for projects, research, work items, meetings, decisions, and 
 
 # Start Here
 
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
 ## Create a note
 
 - **Capture now, classify later:** press `Ctrl+N`. The note is created in `00 Inbox/`.

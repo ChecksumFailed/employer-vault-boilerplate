@@ -10,6 +10,10 @@ summary: Improve CI data quality and make inbound update behavior measurable.
 
 # CMDB Health Improvement
 
+## Tags
+
+#example #cmdb
+
 <!-- Current state, risks, next steps, and important decisions are manually curated. Meetings, research, work items, and the complete decision list are dynamic. Keep this hub a concise dashboard, not a dumping ground. -->
 
 ## Current state

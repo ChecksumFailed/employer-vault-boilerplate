@@ -31,14 +31,21 @@ created: "<% created %>"
 updated: "<% created %>"
 priority:
 owner:
-projects: []
-people: []
 summary:
 ---
 
 # <% workItemTitle %>
 
 <!-- Use kind: issue, enhancement, risk, or question. Create a standalone work item when it needs its own owner, status, investigation, or history. -->
+
+## Connections
+
+projects::
+people::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Description
 
@@ -64,9 +71,7 @@ What would make this work item complete?
 
 Record what changed, why, and how it was verified.
 
-## Related
+## Related records
 
-- Projects:
-- People:
 - Research:
 - Decisions:

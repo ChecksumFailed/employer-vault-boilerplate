@@ -25,7 +25,6 @@ type: person
 status: active
 created: "<% created %>"
 name: <% JSON.stringify(personName) %>
-company:
 role:
 email:
 phone:
@@ -36,6 +35,15 @@ summary:
 # <% personName %>
 
 <!-- Keep person notes factual, respectful, and professionally useful rather than creating a personal dossier. Record work contact details only. Name person files !Name with no spaces and store them in People/. -->
+
+## Connections
+
+company::
+projects::
+
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
 
 ## Context
 
@@ -59,6 +67,11 @@ How do I know this person, and where do our responsibilities intersect?
 
 - [ ]
 
-## Related projects
+## Related notes
 
--
+```dataview
+TABLE type AS "Type", projects AS "Projects", summary AS "Summary", file.mtime AS "Updated"
+WHERE contains(people, this.file.link)
+  AND file.path != this.file.path
+SORT file.mtime DESC
+```

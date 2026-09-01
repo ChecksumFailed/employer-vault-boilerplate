@@ -3,7 +3,6 @@ type: person
 status: active
 created: "2026-08-23"
 name: Morgan Hale
-company: "[[@ExampleCompany]]"
 role: Integration engineer
 email: morgan.hale@example.invalid
 phone: "+1 202-555-0102"
@@ -12,6 +11,15 @@ summary: Fictional integration engineer for the CMDB health example.
 ---
 
 # Morgan Hale
+
+## Connections
+
+company:: [[@ExampleCompany]]
+projects:: [[CMDB Health Improvement]]
+
+## Tags
+
+#example #cmdb
 
 ## Context
 
@@ -35,6 +43,11 @@ Fictional integration engineer at [[@ExampleCompany]] working with [[!AveryChen]
 
 - [ ] Produce a baseline duplicate-CI report by 2026-08-28.
 
-## Related projects
+## Related notes
 
-- [[CMDB Health Improvement]]
+```dataview
+TABLE type AS "Type", projects AS "Projects", summary AS "Summary", file.mtime AS "Updated"
+WHERE contains(people, this.file.link)
+  AND file.path != this.file.path
+SORT file.mtime DESC
+```

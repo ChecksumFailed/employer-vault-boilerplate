@@ -26,6 +26,10 @@ summary:
 
 <!-- Current state, risks, next steps, and important decisions are manually curated. Meetings, research, work items, and the complete decision list are dynamic. Keep this hub a concise dashboard, not a dumping ground. -->
 
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
 ## Current state
 
 Write a short description of where the project stands now.

@@ -8,6 +8,10 @@ summary: Placeholder organization used only by the demonstration notes.
 
 # Example Company
 
+## Tags
+
+#example
+
 ## Context
 
 Example Company is a fictional placeholder organization created solely for this boilerplate's example notes.

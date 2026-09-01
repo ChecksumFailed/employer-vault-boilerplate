@@ -32,6 +32,10 @@ summary:
 
 <!-- Name company files @Name with no spaces and store them in Companies/. Keep the note factual and limited to professionally useful context. -->
 
+## Tags
+
+<!-- Add a small number of relevant tags here. -->
+
 ## Context
 
 What is this organization, and how does it relate to the work?
